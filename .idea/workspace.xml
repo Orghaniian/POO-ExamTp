@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3e37359-743e-4739-88b0-e1e2af5350ab" name="Default Changelist" comment="correction code smell &quot;Method ecrireMessage has a Cognitive Complexity of 13 (exceeds 5 allowed). Consider refactoring. &quot; dans Canal.java ligne 79 en créeant la variable local entries">
+    <list default="true" id="e3e37359-743e-4739-88b0-e1e2af5350ab" name="Default Changelist" comment="Correction du code smell &quot;Method ecrireMessage has a Cognitive Complexity of 13 &quot; par la création de méthodes privée ( getRolesWith(Habilitation habilitation) et utilisateurHasRoles(Utilisateur utilisateur, Boolean auth, List&lt;Rôle&gt; roles) ) pour decouper la logique">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Canal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Canal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +44,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="All in ExamTp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ExamTp" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in ExamTp" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -54,7 +66,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1608218081525</updated>
-      <workItem from="1608218085430" duration="490000" />
+      <workItem from="1608218085430" duration="1105000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout badge code climate">
       <created>1608218272340</created>
@@ -70,7 +82,21 @@
       <option name="project" value="LOCAL" />
       <updated>1608218469214</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Mauvaise interpretation du code smell, suppression de la variable inutile entries">
+      <created>1608218618913</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1608218618913</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Correction du code smell &quot;Method ecrireMessage has a Cognitive Complexity of 13 &quot; par la création de méthodes privée ( getRolesWith(Habilitation habilitation) et utilisateurHasRoles(Utilisateur utilisateur, Boolean auth, List&lt;Rôle&gt; roles) ) pour decouper la logique">
+      <created>1608219051604</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1608219051604</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -79,6 +105,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Ajout badge code climate" />
     <MESSAGE value="correction code smell &quot;Method ecrireMessage has a Cognitive Complexity of 13 (exceeds 5 allowed). Consider refactoring. &quot; dans Canal.java ligne 79 en créeant la variable local entries" />
-    <option name="LAST_COMMIT_MESSAGE" value="correction code smell &quot;Method ecrireMessage has a Cognitive Complexity of 13 (exceeds 5 allowed). Consider refactoring. &quot; dans Canal.java ligne 79 en créeant la variable local entries" />
+    <MESSAGE value="Mauvaise interpretation du code smell, suppression de la variable inutile entries" />
+    <MESSAGE value="Correction du code smell &quot;Method ecrireMessage has a Cognitive Complexity of 13 &quot; par la création de méthodes privée ( getRolesWith(Habilitation habilitation) et utilisateurHasRoles(Utilisateur utilisateur, Boolean auth, List&lt;Rôle&gt; roles) ) pour decouper la logique" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correction du code smell &quot;Method ecrireMessage has a Cognitive Complexity of 13 &quot; par la création de méthodes privée ( getRolesWith(Habilitation habilitation) et utilisateurHasRoles(Utilisateur utilisateur, Boolean auth, List&lt;Rôle&gt; roles) ) pour decouper la logique" />
   </component>
 </project>

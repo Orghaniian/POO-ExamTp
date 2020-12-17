@@ -76,13 +76,9 @@ public class Canal implements Destinataire, Comparable{
 
     public void ecrireMessage(Utilisateur utilisateur, Message message) throws ActionNonAutoriseeException{
         Boolean auth = false;
-        //Récupération de la liste des rôles du serveur ayant l'habilitation ecriture
-        List<Rôle> roles = getRolesWith(Habilitation.ECRITURE);
-
-        if(roles.isEmpty()) throw new ActionNonAutoriseeException();
-
+        //Récupération de la liste des rôles du serveur ayant l'habilitation ecriture et
         //si un l'utilisateur a un role qui a l'habilitation Ecriture il est autorisé à écrire
-        auth = utilisateurHasRoles(utilisateur, auth, roles);
+        auth = utilisateurHasRoles(utilisateur, getRolesWith(Habilitation.ECRITURE));
 
         if(auth){
             message.setAuteur(utilisateur);
@@ -96,11 +92,12 @@ public class Canal implements Destinataire, Comparable{
     /**
      * Retourne true si l'utilisateur a l'un des rôles, false sinon
      * @param utilisateur
-     * @param auth
      * @param roles
      * @return
      */
-    private Boolean utilisateurHasRoles(Utilisateur utilisateur, Boolean auth, List<Rôle> roles) {
+    private Boolean utilisateurHasRoles(Utilisateur utilisateur, List<Rôle> roles) {
+        boolean auth = false;
+        if(roles.isEmpty()) return false;
         for(Map.Entry<Rôle, List<Utilisateur>> entry : mapping_role_utilisateurs.entrySet()){
             for(Rôle role : roles){
                 if(entry.getKey().equals(role)  && entry.getValue().contains(utilisateur)){
