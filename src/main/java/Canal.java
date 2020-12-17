@@ -96,15 +96,15 @@ public class Canal implements Destinataire, Comparable{
      * @return
      */
     private Boolean utilisateurHasRoles(Utilisateur utilisateur, List<Rôle> roles) {
-        if(roles.isEmpty()) return false;
+        boolean auth = false;
         for(Map.Entry<Rôle, List<Utilisateur>> entry : mapping_role_utilisateurs.entrySet()){
             for(Rôle role : roles){
                 if(entry.getKey().equals(role)  && entry.getValue().contains(utilisateur)){
-                    return true;
+                    auth = true;
                 }
             }
         }
-        return false;
+        return auth;
     }
 
     /**
