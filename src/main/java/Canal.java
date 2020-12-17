@@ -75,24 +75,14 @@ public class Canal implements Destinataire, Comparable{
     }
 
     public void ecrireMessage(Utilisateur utilisateur, Message message) throws ActionNonAutoriseeException{
-        List<Rôle> roles = new ArrayList<Rôle>();
         Boolean auth = false;
         //Récupération de la liste des rôles du serveur ayant l'habilitation ecriture
-        for(Map.Entry<Rôle, List<Habilitation>> entry : mapping_role_habilitations.entrySet()){
-            if(entry.getValue().contains(Habilitation.ECRITURE)){
-                roles.add(entry.getKey());
-            }
-        }
+        List<Rôle> roles = getRolesWith(Habilitation.ECRITURE);
+
         if(roles.isEmpty()) throw new ActionNonAutoriseeException();
 
         //si un l'utilisateur a un role qui a l'habilitation Ecriture il est autorisé à écrire
-        for(Map.Entry<Rôle, List<Utilisateur>> entry : mapping_role_utilisateurs.entrySet()){
-            for(Rôle role : roles){
-                if(entry.getKey().equals(role)  && entry.getValue().contains(utilisateur)){
-                    auth = true;
-                }
-            }
-        }
+        auth = utilisateurHasRoles(utilisateur, auth, roles);
 
         if(auth){
             message.setAuteur(utilisateur);
@@ -101,6 +91,38 @@ public class Canal implements Destinataire, Comparable{
         }else{
             throw new ActionNonAutoriseeException();
         }
+    }
 
+    /**
+     * Retourne true si l'utilisateur a l'un des rôles, false sinon
+     * @param utilisateur
+     * @param auth
+     * @param roles
+     * @return
+     */
+    private Boolean utilisateurHasRoles(Utilisateur utilisateur, Boolean auth, List<Rôle> roles) {
+        for(Map.Entry<Rôle, List<Utilisateur>> entry : mapping_role_utilisateurs.entrySet()){
+            for(Rôle role : roles){
+                if(entry.getKey().equals(role)  && entry.getValue().contains(utilisateur)){
+                    auth = true;
+                }
+            }
+        }
+        return auth;
+    }
+
+    /**
+     * retourne la liste des roles du serveur ayant l'habilitation passée en paramètre
+     * @param habilitation
+     * @return
+     */
+    private  List<Rôle> getRolesWith(Habilitation habilitation){
+        List<Rôle> roles = new ArrayList<Rôle>();
+        for(Map.Entry<Rôle, List<Habilitation>> entry : mapping_role_habilitations.entrySet()){
+            if(entry.getValue().contains(habilitation)){
+                roles.add(entry.getKey());
+            }
+        }
+        return roles;
     }
 }
