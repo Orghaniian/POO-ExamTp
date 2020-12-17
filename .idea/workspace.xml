@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3e37359-743e-4739-88b0-e1e2af5350ab" name="Default Changelist" comment="Ajout badge code climate">
+    <list default="true" id="e3e37359-743e-4739-88b0-e1e2af5350ab" name="Default Changelist" comment="correction code smell &quot;Method ecrireMessage has a Cognitive Complexity of 13 (exceeds 5 allowed). Consider refactoring. &quot; dans Canal.java ligne 79 en créeant la variable local entries">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Canal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Canal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +54,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1608218081525</updated>
-      <workItem from="1608218085430" duration="377000" />
+      <workItem from="1608218085430" duration="490000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout badge code climate">
       <created>1608218272340</created>
@@ -62,7 +63,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608218272340</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="correction code smell &quot;Method ecrireMessage has a Cognitive Complexity of 13 (exceeds 5 allowed). Consider refactoring. &quot; dans Canal.java ligne 79 en créeant la variable local entries">
+      <created>1608218469214</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1608218469214</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -70,6 +78,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Ajout badge code climate" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout badge code climate" />
+    <MESSAGE value="correction code smell &quot;Method ecrireMessage has a Cognitive Complexity of 13 (exceeds 5 allowed). Consider refactoring. &quot; dans Canal.java ligne 79 en créeant la variable local entries" />
+    <option name="LAST_COMMIT_MESSAGE" value="correction code smell &quot;Method ecrireMessage has a Cognitive Complexity of 13 (exceeds 5 allowed). Consider refactoring. &quot; dans Canal.java ligne 79 en créeant la variable local entries" />
   </component>
 </project>

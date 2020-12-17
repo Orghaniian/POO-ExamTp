@@ -1,5 +1,8 @@
 import javax.management.relation.Role;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Canal implements Destinataire, Comparable{
     private Map<Rôle, List<Utilisateur>> mapping_role_utilisateurs;
@@ -75,14 +78,14 @@ public class Canal implements Destinataire, Comparable{
         List<Rôle> roles = new ArrayList<Rôle>();
         Boolean auth = false;
         //Récupération de la liste des rôles du serveur ayant l'habilitation ecriture
-        Set<Map.Entry<Rôle, List<Habilitation>>> entries = mapping_role_habilitations.entrySet();
-        for(Map.Entry<Rôle, List<Habilitation>> entry : entries){
+        for(Map.Entry<Rôle, List<Habilitation>> entry : mapping_role_habilitations.entrySet()){
             if(entry.getValue().contains(Habilitation.ECRITURE)){
                 roles.add(entry.getKey());
             }
         }
         if(roles.isEmpty()) throw new ActionNonAutoriseeException();
 
+        //si un l'utilisateur a un role qui a l'habilitation Ecriture il est autorisé à écrire
         for(Map.Entry<Rôle, List<Utilisateur>> entry : mapping_role_utilisateurs.entrySet()){
             for(Rôle role : roles){
                 if(entry.getKey().equals(role)  && entry.getValue().contains(utilisateur)){
